@@ -1,0 +1,17 @@
+.main-container {
+    width: 65%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Comic Sans MS', cursive;
+    }
+  }
