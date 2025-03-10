@@ -9,6 +9,7 @@ const ShareYoutubeMovie = () => {
   const dispatch = useAppDispatch();
     const [url, setUrl] = useState('');
     const share = async () => {
+        console.log("Sharing URL:", url);
         const result = await dispatch(
             authAsyncActions.share({
               url,

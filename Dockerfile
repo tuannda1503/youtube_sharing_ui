@@ -12,5 +12,4 @@ RUN yarn build
 
 EXPOSE 80
 
-# Khởi động ứng dụng React khi container được chạy
 CMD ["yarn", "start"]
