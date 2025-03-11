@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Getting Started with Funny Movie App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The system uploads YouTube videos and shares them to all users logged into the system.
 
 # Available Scripts with Docker
 
