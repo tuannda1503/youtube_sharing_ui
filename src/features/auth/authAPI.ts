@@ -1,7 +1,7 @@
 import { requestCreator, TRequest } from "../../classes/API";
 import { TUser } from "./authSlice";
 import { attachAbortController } from "../../classes/AbortSignal";
-import axios from 'axios';
+import axios from "axios";
 
 export type TLoginReturn = {
   data: {

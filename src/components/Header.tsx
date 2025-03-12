@@ -11,6 +11,7 @@ const Header = () => {
   const { user } = useAppSelector((state) => state.auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isAuthen, setIsAuthen] = useState(user ? true : false);
   const dispatch = useAppDispatch();
 
   const login = async () => {
@@ -21,14 +22,19 @@ const Header = () => {
       })
     );
     if (result.meta.requestStatus === 'fulfilled') {
-      // Đăng nhập thành công
+      setIsAuthen(true)
     } else {
-      // Xử lý lỗi nếu cần
+      setIsAuthen(false)
     }
   };
 
+  const shareMovie = async () => {
+    navigate("/share");
+  }
+
   const logout = async () => {
     dispatch(authActions.logout());
+    setIsAuthen(false);
     navigate("/");
   };
 
@@ -40,6 +46,7 @@ const Header = () => {
       {user ? (
         <div className='login-container'>
           <p>{user.email}</p>
+          <button onClick={shareMovie}>Share a movie</button>
           <button onClick={logout}>Logout</button>
         </div>
       ) : (
