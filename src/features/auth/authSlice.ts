@@ -84,7 +84,7 @@ const _setAccessTokenExpired: CaseReducer<
 };
 
 const login = createAsyncThunk(
-  "auth/sign-in",
+  "auth/login",
   async (options: TLoginOption, { rejectWithValue }) => {
     try {
       const response = await authAPI.login(options);

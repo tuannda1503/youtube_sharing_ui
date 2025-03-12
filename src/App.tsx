@@ -7,6 +7,7 @@ import store from './store';
 import io from 'socket.io-client';
 import Header from './components/Header';
 import Swal from 'sweetalert2'
+import { authActions } from './features/auth/authSlice';
 
 const socket = io(process.env.REACT_APP_API_URL, {
   transports: ['websocket'],
@@ -16,6 +17,14 @@ const socket = io(process.env.REACT_APP_API_URL, {
 const NotFound = () => <div>Not Found</div>;
 
 function App() {
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    const email = localStorage.getItem('email');
+    if (token && email) {
+      store.dispatch(authActions.setToken(token));
+      store.dispatch(authActions.setProfile({ email }));
+    }
+  }, []);
   useEffect(() => {
     socket.on('onMessage', (data: any) => {
       console.log(data.body.title);
